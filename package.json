@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-typeorm-backend",
+  "name": "nodejs-typeorm-server",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
