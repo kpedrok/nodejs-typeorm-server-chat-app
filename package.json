@@ -1,11 +1,12 @@
 {
-  "name": "nlw#5-nodejs",
+  "name": "nlw5-nodejs",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev src/server.ts",
-    "typeorm": "ts-node-dev node_modules/typeorm/cli.js"
+    "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
+    "migrate": "ts-node-dev node_modules/typeorm/cli.js migration:run",
+    "dev": "ts-node-dev src/server.ts"
 
   },
   "dependencies": {
