@@ -5,7 +5,7 @@ import {
   PrimaryColumn,
   UpdateDateColumn,
 } from "typeorm";
-import { v4 as uuidV4 } from "uuid";
+import { v4 as uuid } from "uuid";
 
 @Entity("settings")
 class Setting {
@@ -25,7 +25,7 @@ class Setting {
   updated_at: Date;
 
   constructor() {
-    if (!this.id) this.id = uuidV4();
+    if (!this.id) this.id = uuid();
   }
 }
 
