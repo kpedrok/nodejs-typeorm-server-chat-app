@@ -1,5 +1,3 @@
-https://github.com/EliasGcf/nlw-05-nodejs/blob/main/package.json
-
 ## Steps
 
 - npm yarn init
