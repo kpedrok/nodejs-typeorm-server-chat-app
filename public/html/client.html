@@ -57,14 +57,14 @@
 
     <div class="chat chat_support" id="chat_help">
       <div class="in_support_header">
-        <span>Start chat with support</span>
+        <span>Iniciar um chat de suporte</span>
         <div class="icon_close" onclick="closeChat();">
           <img src="/images/close.png" />
         </div>
       </div>
       <div class="text_support text_help">
         <div class="text_help">
-          <span>How can we help you?</span>
+          <span>Como podemos te ajudar?</span>
           <textarea
             name="txt_help"
             id="txt_help"
@@ -74,25 +74,25 @@
             maxlength="250"
           ></textarea>
           <span class="charac_remaining">
-            <label id="charac_remaining">250</label> characters left</span
+            <label id="charac_remaining">250</label> caracteres restantes</span
           >
         </div>
 
         <div class="first_email">
-          <span>Your e-mail</span>
+          <span>Seu e-mail</span>
           <input type="text" name="" id="email" />
         </div>
 
         <div class="button">
-          <button class="btn_cancel">Cancel</button>
-          <button class="btn_start_chat" id="start_chat">Start chat</button>
+          <button class="btn_cancel">Cancelar</button>
+          <button class="btn_start_chat" id="start_chat">Iniciar chat</button>
         </div>
       </div>
     </div>
 
     <div>
       <button class="btn_support" id="btn_support" onclick="openChat();">
-        <img src="/images/chat.png" /> Support
+        <img src="/images/chat.png" /> Suporte
       </button>
     </div>
   </body>
@@ -102,14 +102,14 @@
     const chat = document.getElementById("chat_help");
 
     function onLoad() {
-      // fetch("http://localhost:3333/settings/admin").then((result) =>
-      //   result.json().then((response) => {
-      //     const buttonSupport = document.getElementById("btn_support");
-      //     if (!response.chat) {
-      //       buttonSupport.style.display = "none";
-      //     }
-      //   })
-      // );
+      fetch("http://localhost:3333/settings/admin").then((result) =>
+        result.json().then((response) => {
+          const buttonSupport = document.getElementById("btn_support");
+          if (!response.chat) {
+            buttonSupport.style.display = "none";
+          }
+        })
+      );
     }
 
     function openChat() {
