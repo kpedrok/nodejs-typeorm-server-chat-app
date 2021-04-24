@@ -36,7 +36,7 @@ class ConnectionsService {
   async findAllWithoutAdmin() {
     const connections = this.connectionsRepository.find({
       where: {
-        admin_id: null,
+        // admin_id: null,
       },
       relations: ["user"],
     });
