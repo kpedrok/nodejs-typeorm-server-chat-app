@@ -1,10 +1,9 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response, Router } from "express";
 import { MessagesService } from "../services/MessagesService";
 
 class MessagesController {
   async create(request: Request, response: Response) {
     const { admin_id, text, user_id } = request.body;
-
     const messagesService = new MessagesService();
 
     try {
@@ -21,11 +20,33 @@ class MessagesController {
     }
   }
 
-  async showByUser(request: Request, response: Response) {
-    const { id } = request.params;
+  async showByUser(id: string) {
     const messagesService = new MessagesService();
     const list = await messagesService.listByUser(id);
-    return response.json(list);
+    return list;
+  }
+
+  static router(): Router {
+    const router = Router({
+      strict: true,
+    });
+
+    const instance = new MessagesController();
+
+    router.post("/", instance.create);
+
+    router.get("/:id", (req: Request, res: Response, next: NextFunction) =>
+      instance
+        .showByUser(req.params.id)
+        .then((result) => res.status(200).json(result))
+        .catch((next) => {
+          return res.status(400).json({
+            message: next.message,
+          });
+        })
+    );
+
+    return router;
   }
 }
 

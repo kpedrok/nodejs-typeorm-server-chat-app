@@ -9,6 +9,7 @@
 - yarn add ts-node-dev -D
 
 Banco
+- typeorm init --name XXXX --database XXXX // not used, but could be
 - yarn add typeorm
 - yarn add sqlite3
 - yarn add reflect-metadata
