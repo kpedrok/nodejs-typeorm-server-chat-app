@@ -148,3 +148,5 @@ temp/
 *.code-workspace
 
 # End of https://www.toptal.com/developers/gitignore/api/database,vscode,linux,windows,macos,node,dotenv
+
+.DS_store

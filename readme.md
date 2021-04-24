@@ -23,3 +23,5 @@ Banco
 # Other tools
 - Postman
 - BeeKeeper studio
+
+- http://localhost:3333/pages/client
